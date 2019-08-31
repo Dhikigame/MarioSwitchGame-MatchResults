@@ -113,7 +113,7 @@ echo "</table>";
         </tr>
         <tr>
           <td><div id="start_rate" maxlength="4"></div></td>
-          <td></td>
+          <td><div id="diff_rate" maxlength="4"></div></td>
           <td><div id="current_rate" maxlength="4"></div></td>
         </tr>
       </table>
