@@ -50,7 +50,7 @@ for($i = 0;$i <= 999;$i++){
           <option value="noresult">バトル結果を選択</option>
           <option value="win">勝ち</option>
           <option value="lose">負け</option>
-          <option value="lose_goal">負けゴール</option>
+          <option value="lose_goal">ゴール負け</option>
           <option value="time">タイムアップ</option>
           <option value="giveup">ギブアップ</option>
           <option value="disconnect">回線切れ</option>
@@ -158,7 +158,7 @@ echo "</table>";
       <table border="1">
         <tr>
           <th>負け</th>
-          <th>負けゴール</th>
+          <th>ゴール負け</th>
           <th>タイムアップ</th>
           <th>ギブアップ</th>
           <th>回線切れ</th>
