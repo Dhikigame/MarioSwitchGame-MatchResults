@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>My Vue App</title>
+  <title>マリオメーカー2　みんなでバトル　戦績表</title>
   <link rel="stylesheet" href="css/styles.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/result.js"></script>
