@@ -32,6 +32,33 @@ function battle_result(){
 
 
     /* スキン選択 */
+
+    // バトル結果が「勝ち」、スキンをnoskinから変更した場合
+    if(result[i] == "win" && skin_flag[i] == 0){
+
+      if(skin[i] == "SMB"){
+        document.battle.smb_win.value++;
+        document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+      }
+      if(skin[i] == "SMB3"){
+        document.battle.smb3_win.value++;
+        document.battle.smb3_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+      }
+      if(skin[i] == "SMW"){
+        document.battle.smw_win.value++;
+        document.battle.smw_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+      }
+      if(skin[i] == "NSMB"){
+        document.battle.nsmb_win.value++;
+        document.battle.nsmb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+      }
+      if(skin[i] == "SM3D"){
+        document.battle.sm3d_win.value++;
+        document.battle.sm3d_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+      }
+
+    }
+
     // スキンが「選択してください」の場合
     if(skin[i] == "noskin" && skin_flag[i] != 0){
 
@@ -40,101 +67,129 @@ function battle_result(){
         console.log("noskin");
         document.battle.smb_total.value--;
         document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
-        // if(result[i] == "win"){
-        //   console.log("win1");
-        //   document.battle.win_total.value--;
-        //   document.battle.smb_win.value++;
-        //   document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
-        //   document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
-        // }
+        if(result[i] == "win"){
+          console.log("win1");
+          document.battle.smb_win.value--;
+          document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+          document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+        }
       }
       if(skin_flag[i] == 2){
         console.log("noskin");
         document.battle.smb3_total.value--;
         document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
-        // if(result[i] == "win"){
-        //   console.log("win2");
-        //   document.battle.win_total.value--;
-        //   document.battle.smb3_win.value++;
-        //   document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
-        //   document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
-        // }
+        if(result[i] == "win"){
+          console.log("win2");
+          document.battle.smb3_win.value--;
+          document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+          document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
+        }
       }
       if(skin_flag[i] == 3){
         console.log("noskin");
         document.battle.smw_total.value--;
         document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
-        // if(result[i] == "win"){
-        //   console.log("win3");
-        //   document.battle.win_total.value--;
-        //   document.battle.smw3_win.value++;
-        //   document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
-        //   document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
-        // }
+        if(result[i] == "win"){
+          console.log("win3");
+          document.battle.smw_win.value--;
+          document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+          document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
+        }
       }
       if(skin_flag[i] == 4){
         console.log("noskin");
         document.battle.nsmb_total.value--;
         document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
-        // if(result[i] == "win"){
-        //   console.log("win4");
-        //   document.battle.win_total.value--;
-        //   document.battle.nsmb_win.value++;
-        //   document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
-        //   document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
-        // }
+        if(result[i] == "win"){
+          console.log("win4");
+          document.battle.nsmb_win.value--;
+          document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+          document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
+        }
       }
       if(skin_flag[i] == 5){
         console.log("noskin");
         document.battle.sm3d_total.value--;
         document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
-        // if(result[i] == "win"){
-        //   console.log("win5");
-        //   document.battle.win_total.value--;
-        //   document.battle.sm3d_win.value++;
-        //   document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
-        //   document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
-        // }
+        if(result[i] == "win"){
+          console.log("win5");
+          document.battle.sm3d_win.value--;
+          document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+          document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+        }
       }
 
-      document.battle.battle_total.value--;
-      document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+      if(result_flag[i] == 0){
+        document.battle.battle_total.value--;
+        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+      }
 
       skin_flag[i] = 0;
     }
     // スーパーマリオブラザーズに合計を表示
     if(skin[i] == "SMB" && skin_flag[i] != 1){
       document.battle.smb_total.value++;
-      document.battle.battle_total.value++;
       document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
-      document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
 
       if(skin_flag[i] == 2){
         console.log("SMB");
         document.battle.smb3_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win2");
+          document.battle.smb_win.value++;
+          document.battle.smb3_win.value--;
+          document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+          document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
+        }
       }
       if(skin_flag[i] == 3){
         console.log("SMB");
         document.battle.smw_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win3");
+          document.battle.smb_win.value++;
+          document.battle.smw_win.value--;
+          document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+          document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
+        }
       }
       if(skin_flag[i] == 4){
         console.log("SMB");
         document.battle.nsmb_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win4");
+          document.battle.smb_win.value++;
+          document.battle.nsmb_win.value--;
+          document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+          document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
+        }
       }
       if(skin_flag[i] == 5){
         console.log("SMB");
         document.battle.sm3d_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win5");
+          document.battle.smb_win.value++;
+          document.battle.sm3d_win.value--;
+          document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+          document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+        }
+      }
+
+      if(skin_flag[i] == 0 && result[i] == "noresult"){
+        document.battle.battle_total.value++;
         document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
       }
 
@@ -142,37 +197,70 @@ function battle_result(){
     }
     // スーパーマリオブラザーズ3に合計を表示
     if(skin[i] == "SMB3" && skin_flag[i] != 2){
-      document.battle.battle_total.value++;
+      // document.battle.battle_total.value++;
       document.battle.smb3_total.value++;
       document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
-      document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+      // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
       
       if(skin_flag[i] == 1){
         console.log("SMB3");
         document.battle.smb_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win1");
+          document.battle.smb3_win.value++;
+          document.battle.smb_win.value--;
+          document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
+          document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+        }
       }
       if(skin_flag[i] == 3){
         console.log("SMB3");
         document.battle.smw_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win3");
+          document.battle.smb3_win.value++;
+          document.battle.smw_win.value--;
+          document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
+          document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
+        }
       }
       if(skin_flag[i] == 4){
         console.log("SMB3");
         document.battle.nsmb_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win4");
+          document.battle.smb3_win.value++;
+          document.battle.nsmb_win.value--;
+          document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
+          document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
+        }
       }
       if(skin_flag[i] == 5){
         console.log("SMB3");
         document.battle.sm3d_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win5");
+          document.battle.smb3_win.value++;
+          document.battle.sm3d_win.value--;
+          document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
+          document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+        }
+      }
+
+      if(skin_flag[i] == 0 && result[i] == "noresult"){
+        document.battle.battle_total.value++;
         document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
       }
       
@@ -181,36 +269,69 @@ function battle_result(){
     // スーパーマリオワールドに合計を表示
     if(skin[i] == "SMW" && skin_flag[i] != 3){
       document.battle.smw_total.value++;
-      document.battle.battle_total.value++;
+      // document.battle.battle_total.value++;
       document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
-      document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+      // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
 
       if(skin_flag[i] == 1){
         console.log("SMW");
         document.battle.smb_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win1");
+          document.battle.smw_win.value++;
+          document.battle.smb_win.value--;
+          document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
+          document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+        }
       }
       if(skin_flag[i] == 2){
         console.log("SMW");
         document.battle.smb3_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win2");
+          document.battle.smw_win.value++;
+          document.battle.smb3_win.value--;
+          document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
+          document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
+        }
       }
       if(skin_flag[i] == 4){
         console.log("SMW");
         document.battle.nsmb_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win4");
+          document.battle.smw_win.value++;
+          document.battle.nsmb_win.value--;
+          document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
+          document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
+        }
       }
       if(skin_flag[i] == 5){
         console.log("SMW");
         document.battle.sm3d_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win5");
+          document.battle.smw_win.value++;
+          document.battle.sm3d_win.value--;
+          document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
+          document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+        }
+      }
+
+      if(skin_flag[i] == 0 && result[i] == "noresult"){
+        document.battle.battle_total.value++;
         document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
       }
 
@@ -219,36 +340,69 @@ function battle_result(){
     // Newスーパーマリオブラザーズに合計を表示
     if(skin[i] == "NSMB" && skin_flag[i] != 4){
       document.battle.nsmb_total.value++;
-      document.battle.battle_total.value++;
+      // document.battle.battle_total.value++;
       document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
-      document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+      // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
 
       if(skin_flag[i] == 1){
         console.log("NSMB");
         document.battle.smb_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win1");
+          document.battle.nsmb_win.value++;
+          document.battle.smb_win.value--;
+          document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
+          document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+        }
       }
       if(skin_flag[i] == 2){
         console.log("NSMB");
         document.battle.smb3_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win2");
+          document.battle.nsmb_win.value++;
+          document.battle.smb3_win.value--;
+          document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
+          document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
+        }
       }
       if(skin_flag[i] == 3){
         console.log("NSMB");
         document.battle.smw_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win3");
+          document.battle.nsmb_win.value++;
+          document.battle.smw_win.value--;
+          document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
+          document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
+        }
       }
       if(skin_flag[i] == 5){
         console.log("NSMB");
         document.battle.sm3d_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win5");
+          document.battle.nsmb_win.value++;
+          document.battle.sm3d_win.value--;
+          document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
+          document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+        }
+      }
+
+      if(skin_flag[i] == 0 && result[i] == "noresult"){
+        document.battle.battle_total.value++;
         document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
       }
 
@@ -257,36 +411,69 @@ function battle_result(){
     // スーパーマリオ3Dワールドに合計を表示
     if(skin[i] == "SM3D" && skin_flag[i] != 5){
       document.battle.sm3d_total.value++;
-      document.battle.battle_total.value++;
+      // document.battle.battle_total.value++;
       document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
-      document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+      // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
 
       if(skin_flag[i] == 1){
         console.log("SM3D");
         document.battle.smb_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win1");
+          document.battle.sm3d_win.value++;
+          document.battle.smb_win.value--;
+          document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+          document.battle.smb_win_per.value = document.battle.smb_win.value / document.battle.smb_total.value * 100;
+        }
       }
       if(skin_flag[i] == 2){
         console.log("SM3D");
         document.battle.smb3_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win2");
+          document.battle.sm3d_win.value++;
+          document.battle.smb3_win.value--;
+          document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+          document.battle.smb3_win_per.value = document.battle.smb3_win.value / document.battle.smb3_total.value * 100;
+        }
       }
       if(skin_flag[i] == 3){
         console.log("SM3D");
         document.battle.smw_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
-        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win3");
+          document.battle.sm3d_win.value++;
+          document.battle.smw_win.value--;
+          document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+          document.battle.smw_win_per.value = document.battle.smw_win.value / document.battle.smw_total.value * 100;
+        }
       }
       if(skin_flag[i] == 4){
         console.log("SM3D");
         document.battle.nsmb_total.value--;
-        document.battle.battle_total.value--;
+        // document.battle.battle_total.value--;
         document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
+        // document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+        if(result[i] == "win"){
+          console.log("win4");
+          document.battle.sm3d_win.value++;
+          document.battle.nsmb_win.value--;
+          document.battle.sm3d_win_per.value = document.battle.sm3d_win.value / document.battle.sm3d_total.value * 100;
+          document.battle.nsmb_win_per.value = document.battle.nsmb_win.value / document.battle.nsmb_total.value * 100;
+        }
+      }
+
+      if(skin_flag[i] == 0 && result[i] == "noresult"){
+        document.battle.battle_total.value++;
         document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
       }
 
@@ -346,6 +533,11 @@ function battle_result(){
         document.battle.disconnect_total.value--;
       }
 
+      if((1 <= result_flag[i] <= 6) && skin[i] == "noskin"){
+        document.battle.battle_total.value--;
+        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+      }
+
       result_flag[i] = 0;
     }
     // バトル結果　勝ちの場合の合計
@@ -397,11 +589,16 @@ function battle_result(){
         document.battle.disconnect_total.value--;
       }
 
+      if(result_flag[i] == 0 && skin[i] == "noskin"){
+        document.battle.battle_total.value++;
+      }
+
       result_flag[i] = 1;
     }
     // バトル結果　負けの場合の合計
     if(result[i] == "lose" && result_flag[i] != 2){
       document.battle.lose_total.value++;
+      document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
 
       if(result_flag[i] == 1){
         console.log("lose");
@@ -444,6 +641,11 @@ function battle_result(){
       if(result_flag[i] == 6){
         console.log("lose");
         document.battle.disconnect_total.value--;
+      }
+
+      if(result_flag[i] == 0 && skin[i] == "noskin"){
+        document.battle.battle_total.value++;
+        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
       }
 
       result_flag[i] = 2;
@@ -495,6 +697,11 @@ function battle_result(){
         document.battle.disconnect_total.value--;
       }
 
+      if(result_flag[i] == 0 && skin[i] == "noskin"){
+        document.battle.battle_total.value++;
+        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+      }
+
       result_flag[i] = 3;
     }
     // バトル結果　タイムアップの場合の合計
@@ -542,6 +749,11 @@ function battle_result(){
       if(result_flag[i] == 6){
         console.log("time");
         document.battle.disconnect_total.value--;
+      }
+
+      if(result_flag[i] == 0 && skin[i] == "noskin"){
+        document.battle.battle_total.value++;
+        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
       }
 
       result_flag[i] = 4;
@@ -593,6 +805,11 @@ function battle_result(){
         document.battle.disconnect_total.value--;
       }
 
+      if(result_flag[i] == 0 && skin[i] == "noskin"){
+        document.battle.battle_total.value++;
+        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+      }
+
       result_flag[i] = 5;
     }
     // バトル結果　回線切れの場合の合計
@@ -640,6 +857,11 @@ function battle_result(){
       if(result_flag[i] == 5){
         console.log("disconnect");
         document.battle.giveup_total.value--;
+      }
+
+      if(result_flag[i] == 0 && skin[i] == "noskin"){
+        document.battle.battle_total.value++;
+        document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
       }
 
       result_flag[i] = 6;
