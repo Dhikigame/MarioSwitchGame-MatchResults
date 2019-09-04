@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <title>マリオメーカー2　みんなでバトル　戦績表</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/result.js"></script>
   <script src="js/rate.js"></script>
@@ -18,17 +24,20 @@
   <form name="battle">
     バトル開始前レート：<input type='number' class="battle_before_rate" id="before_rate" maxlength="4" onChange="battle_before_rate()"/> 
     <br>
-    <table border="1" class="battle_table">
-      <tr>
-        <th>バトル数</th>
-        <th>スキン</th>
-        <th>バトル結果</th>
-        <th>バトル後レート</th>
-        <th>タグ1</th>
-        <th>タグ2</th>
-        <th>コース名</th>
-        <th>コースID</th>
-      </tr>
+    <table border="1" class="table table-sm battle_table">
+    <thead>
+        <tr>
+          <th scope="col">バトル数</th>
+          <th scope="col">スキン</th>
+          <th scope="col">バトル結果</th>
+          <th scope="col">バトル後レート</th>
+          <th scope="col">タグ1</th>
+          <th scope="col">タグ2</th>
+          <th scope="col">コース名</th>
+          <th scope="col">コースID</th>
+        </tr>
+    </thead>
+    <tbody>
 <?php
 for($i = 0;$i <= 999;$i++){
   echo "<tr><td>";
@@ -100,7 +109,7 @@ for($i = 0;$i <= 999;$i++){
       </td>';
   echo "</tr>";
 }
-echo "</table>";
+echo "</tbody></table>";
 ?>
     </center>
     
@@ -112,9 +121,9 @@ echo "</table>";
           <th>現在レート</th>
         </tr>
         <tr>
-          <td><div id="start_rate" maxlength="4"></div></td>
+          <td><div id="start_rate" maxlength="4" value="0"></div></td>
           <td><div id="diff_rate" maxlength="4"></div></td>
-          <td><div id="current_rate" maxlength="4"></div></td>
+          <td><div id="current_rate" maxlength="4" value="0"></div></td>
         </tr>
       </table>
       <table border="1">

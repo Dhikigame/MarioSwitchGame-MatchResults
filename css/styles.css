@@ -1,3 +1,21 @@
+table thead tr{
+    background-color: #FFC107;
+    color:#000;
+}
+
+table tbody td {
+    background-color: rgb(255, 248, 228);
+    font-size: .8em;
+}
+
+select{
+    color: rgb(0, 0, 0);
+    background-color: #c7c6a4;
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+}
+
 .battle_table{
     padding-bottom: 150px;
 }

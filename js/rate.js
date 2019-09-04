@@ -34,10 +34,10 @@ function battle_rate(){
             if(document.getElementById("diff_rate").innerHTML > 0){
                 document.getElementById('diff_rate').innerHTML = '+' + document.getElementById('diff_rate').innerHTML;
                 var div = document.getElementById('diff_rate');
-                div.style.color = '#00f';
+                div.style.color = '#f00';
             }else{
                 var div = document.getElementById('diff_rate');
-                div.style.color = '#f00';
+                div.style.color = '#00f';
             }
         }
     }
