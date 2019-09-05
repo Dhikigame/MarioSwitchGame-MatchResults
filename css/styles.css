@@ -1,9 +1,10 @@
-@charset "utf-8";
-
-
+@font-face {
+	font-family: 'GenJyuuGothic';
+	src: url('genjyuugothic-20150607/GenJyuuGothic-Medium.ttf');
+}
 
 table{
-    font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','メイリオ', Meiryo,sans-serif;
+    font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','GenJyuuGothic',sans-serif;
 }
 
 table thead tr{
