@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>マリオメーカー2　みんなでバトル　戦績表</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/result.js"></script>
   <script src="js/rate.js"></script>
@@ -18,17 +24,20 @@
   <form name="battle">
     バトル開始前レート：<input type='number' class="battle_before_rate" id="before_rate" maxlength="4" onChange="battle_before_rate()"/> 
     <br>
-    <table border="1" class="battle_table">
-      <tr>
-        <th>バトル数</th>
-        <th>スキン</th>
-        <th>バトル結果</th>
-        <th>バトル後レート</th>
-        <th>タグ1</th>
-        <th>タグ2</th>
-        <th>コース名</th>
-        <th>コースID</th>
-      </tr>
+    <table border="1" bordercolor="#000" class="table table-sm battle_table">
+    <thead>
+        <tr>
+          <th scope="col">バトル数</th>
+          <th scope="col">スキン</th>
+          <th scope="col">バトル結果</th>
+          <th scope="col">バトル後レート</th>
+          <th scope="col">タグ1</th>
+          <th scope="col">タグ2</th>
+          <th scope="col">コース名</th>
+          <th scope="col">コースID</th>
+        </tr>
+    </thead>
+    <tbody>
 <?php
 for($i = 0;$i <= 999;$i++){
   echo "<tr><td>";
@@ -100,77 +109,95 @@ for($i = 0;$i <= 999;$i++){
       </td>';
   echo "</tr>";
 }
-echo "</table>";
+echo "</tbody></table>";
 ?>
     </center>
     
-    <div class="result">
-      <table border="1">
-        <tr>
-          <th>バトル開始前レート</th>
-          <th>レート差</th>
-          <th>現在レート</th>
-        </tr>
-        <tr>
-          <td><div id="start_rate" maxlength="4"></div></td>
-          <td><div id="diff_rate" maxlength="4"></div></td>
-          <td><div id="current_rate" maxlength="4"></div></td>
-        </tr>
-      </table>
-      <table border="1">
-        <tr>
-          <th></th>
-          <th>初代マリオ</th>
-          <th>マリオ3</th>
-          <th>ワールド</th>
-          <th>New</th>
-          <th>3Dワールド</th>
-          <th>累計</th>
-        </tr>
-        <tr>
-          <td>バトル数</td>
-          <td><input type="text" name="smb_total" size="4" value="0"></td>
-          <td><input type="text" name="smb3_total" size="4" value="0"></td>
-          <td><input type="text" name="smw_total" size="4" value="0"></td>
-          <td><input type="text" name="nsmb_total" size="4" value="0"> </td>
-          <td><input type="text" name="sm3d_total" size="4" value="0"></td>
-          <td><input type="text" name="battle_total" size="4" value="0"></td>
-        </tr>
-        <tr>
-          <td>勝利数</td>
-          <td><input type="text" name="smb_win" size="4" value="0"></td>
-          <td><input type="text" name="smb3_win" size="4" value="0"></td>
-          <td><input type="text" name="smw_win" size="4" value="0"></td>
-          <td><input type="text" name="nsmb_win" size="4" value="0"></td>
-          <td><input type="text" name="sm3d_win" size="4" value="0"></td>
-          <td><input type="text" name="win_total" size="4" value="0"></td>
-        </tr>
-        <tr>
-          <td>勝率(%)</td>
-          <td><input type="text" name="smb_win_per" size="4" value="0"></td>
-          <td><input type="text" name="smb3_win_per" size="4" value="0"></td>
-          <td><input type="text" name="smw_win_per" size="4" value="0"></td>
-          <td><input type="text" name="nsmb_win_per" size="4" value="0"></td>
-          <td><input type="text" name="sm3d_win_per" size="4" value="0"></td>
-          <td><input type="text" name="win_total_per" size="4" value="0"></td>
-        </tr>
-      </table>
-      <table border="1">
-        <tr>
-          <th>負け</th>
-          <th>ゴール負け</th>
-          <th>タイムアップ</th>
-          <th>ギブアップ</th>
-          <th>回線切れ</th>
-        </tr>
-        <tr>
-          <td><input type="text" name="lose_total" size="4" value="0"></td>
-          <td><input type="text" name="lose_goal_total" size="4" value="0"></td>
-          <td><input type="text" name="time_total" size="4" value="0"> </td>
-          <td><input type="text" name="giveup_total" size="4" value="0"></td>
-          <td><input type="text" name="disconnect_total" size="4" value="0"></td>
-        </tr>
-      </table>
+    <div class="result row">
+      <div class="col-md-3 col-lg-3 col-sm-3">
+        <table border="2" bordercolor="#000" class="table table-sm battle_table">
+          <tbody>
+            <tr>
+              <th>バトル開始前レート</th>
+              <td><div style="font-size:large;" class="start_rate" id="start_rate" maxlength="4" value="0"></div></td>
+            </tr>
+            <tr>
+              <th style="font-size:x-large;">レート差</th>
+              <td><div style="font-size:x-large;" class="diff_rate" id="diff_rate" maxlength="4"></div></td>     
+            </tr>
+            <tr>
+              <th style="font-size:x-large;">現在レート</th>
+              <td><div style="font-size:x-large; font-weight: bold;" class="current_rate" id="current_rate" maxlength="4" value="0"></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-5 col-lg-5 col-sm-5">
+        <table border="2" bordercolor="#000" class="table table-sm battle_table">
+          <thead>
+            <tr>
+              <th></th>
+              <th style="font-size:small;">初代マリオ</th>
+              <th style="font-size:small;">マリオ3</th>
+              <th style="font-size:small;">ワールド</th>
+              <th style="font-size:small;">New</th>
+              <th style="font-size:small;">3Dワールド</th>
+              <th style="font-size:small;">累計</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>バトル数</td>
+              <td><input type="text" name="smb_total" size="4" value="0" readonly></td>
+              <td><input type="text" name="smb3_total" size="4" value="0" readonly></td>
+              <td><input type="text" name="smw_total" size="4" value="0" readonly></td>
+              <td><input type="text" name="nsmb_total" size="4" value="0" readonly> </td>
+              <td><input type="text" name="sm3d_total" size="4" value="0" readonly></td>
+              <td><input style="font-size:large;" type="text" name="battle_total" size="4" value="0" readonly></td>
+            </tr>
+            <tr>
+              <td style="font-size:large;">勝利数</td>
+              <td><input style="font-size:medium;" type="text" name="smb_win" size="4" value="0" readonly></td>
+              <td><input style="font-size:medium;" type="text" name="smb3_win" size="4" value="0" readonly></td>
+              <td><input style="font-size:medium;" type="text" name="smw_win" size="4" value="0" readonly></td>
+              <td><input style="font-size:medium;" type="text" name="nsmb_win" size="4" value="0" readonly></td>
+              <td><input style="font-size:medium;" type="text" name="sm3d_win" size="4" value="0" readonly></td>
+              <td><input style="font-size:large; font-weight: bold;" type="text" name="win_total" size="4" value="0" readonly></td>
+            </tr>
+            <tr>
+              <td style="font-size:large;">勝率(%)</td>
+              <td><input style="font-size:large;" type="text" name="smb_win_per" size="5" value="0" readonly></td>
+              <td><input style="font-size:large;" type="text" name="smb3_win_per" size="5" value="0" readonly></td>
+              <td><input style="font-size:large;" type="text" name="smw_win_per" size="5" value="0" readonly></td>
+              <td><input style="font-size:large;" type="text" name="nsmb_win_per" size="5" value="0" readonly></td>
+              <td><input style="font-size:large;" type="text" name="sm3d_win_per" size="5" value="0" readonly></td>
+              <td><input style="font-size:x-large; font-weight: bold;" type="text" name="win_total_per" size="6" value="0" readonly></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-4 col-lg-4 col-sm-4">
+        <table border="2" bordercolor="#000">
+          <thead>
+            <tr>
+              <th>負け</th>
+              <th>ゴール負け</th>
+              <th>タイムアップ</th>
+              <th>ギブアップ</th>
+              <th>回線切れ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" name="lose_total" size="4" value="0" readonly></td>
+              <td><input type="text" name="lose_goal_total" size="4" value="0" readonly></td>
+              <td><input type="text" name="time_total" size="4" value="0" readonly> </td>
+              <td><input type="text" name="giveup_total" size="4" value="0" readonly></td>
+              <td><input type="text" name="disconnect_total" size="4" value="0" readonly></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       </div>
   </form>
 </body>
