@@ -593,6 +593,8 @@ function battle_result(){
         document.battle.battle_total.value++;
       }
 
+      document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
+      
       result_flag[i] = 1;
     }
     // バトル結果　負けの場合の合計
