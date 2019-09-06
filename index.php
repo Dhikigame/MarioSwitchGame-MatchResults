@@ -13,6 +13,15 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/result.js"></script>
   <script src="js/rate.js"></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85902327-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-85902327-4');
+  </script>
 </head>
 <body>
   <center><h2>マリオメーカー2　みんなでバトル　戦績表</h2></center>
