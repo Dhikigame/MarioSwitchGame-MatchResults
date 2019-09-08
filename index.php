@@ -180,7 +180,7 @@ echo "</tbody></table>";
               <td><input style="font-size:large;" type="text" name="smw_win_per" size="5" value="0" readonly></td>
               <td><input style="font-size:large;" type="text" name="nsmb_win_per" size="5" value="0" readonly></td>
               <td><input style="font-size:large;" type="text" name="sm3d_win_per" size="5" value="0" readonly></td>
-              <td><input style="font-size:x-large; font-weight: bold;" type="text" name="win_total_per" size="6" value="0" readonly></td>
+              <td><input style="font-size:x-large; font-weight: bold;" type="text" name="win_total_per" size="5" value="0" readonly></td>
             </tr>
           </tbody>
         </table>
