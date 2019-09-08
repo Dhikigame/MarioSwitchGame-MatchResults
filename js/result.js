@@ -594,7 +594,7 @@ function battle_result(){
       }
 
       document.battle.win_total_per.value = document.battle.win_total.value / document.battle.battle_total.value * 100;
-      
+
       result_flag[i] = 1;
     }
     // バトル結果　負けの場合の合計
@@ -870,5 +870,27 @@ function battle_result(){
     }
 
   }
-  
+
+  /* 各勝率を小数点以下2桁までしか出さないようにする */
+  var win_total_per = Number(document.battle.win_total_per.value);
+  var smb_win_per = Number(document.battle.smb_win_per.value);
+  var smb3_win_per = Number(document.battle.smb3_win_per.value);
+  var smw_win_per = Number(document.battle.smw_win_per.value);
+  var nsmb_win_per = Number(document.battle.nsmb_win_per.value);
+  var sm3d_win_per = Number(document.battle.sm3d_win_per.value);
+
+  win_total_per = win_total_per.toFixed(2);
+  smb_win_per = smb_win_per.toFixed(2);
+  smb3_win_per = smb3_win_per.toFixed(2);
+  smw_win_per = smw_win_per.toFixed(2);
+  nsmb_win_per = nsmb_win_per.toFixed(2);
+  sm3d_win_per = sm3d_win_per.toFixed(2);
+
+  document.battle.win_total_per.value = win_total_per;
+  document.battle.smb_win_per.value = smb_win_per;
+  document.battle.smb3_win_per.value = smb3_win_per;
+  document.battle.smw_win_per.value = smw_win_per;
+  document.battle.nsmb_win_per.value = nsmb_win_per;
+  document.battle.sm3d_win_per.value = sm3d_win_per;
+
 }
