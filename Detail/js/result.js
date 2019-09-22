@@ -20,7 +20,7 @@ var result = new Array();
 function battle_result(){
   
 
-  for(var i = 0; i <= 999; i++){
+  for(var i = 0; i <= 199; i++){
 
     j = i * 7 + 1;
     // 選択したスキンを取得

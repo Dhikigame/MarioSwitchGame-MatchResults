@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>マリオメーカー2　みんなでバトル　戦績表</title>
-  <link rel="stylesheet" href="css/styles.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="../css/styles.css" type="text/css" charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -11,8 +11,14 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  
   <script src="js/result.js"></script>
   <script src="js/rate.js"></script>
+  <!-- <script src="js/garlic.js"></script> -->
+  <!-- <script src="js/cookie_garlic.js"></script> -->
+  <!-- <script src="js/cookie.js"></script> -->
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85902327-4"></script>
   <script>
@@ -22,18 +28,19 @@
 
     gtag('config', 'UA-85902327-4');
   </script>
+
 </head>
 <body>
-  <center><h2>マリオメーカー2　みんなでバトル　戦績表</h2></center>
+  <center><h2 class="heading">マリオメーカー2　みんなでバトル　戦績表</h2></center>
   マリオメーカー2のみんなでバトル用の戦績表になります。<br>
   配信等で利用してくださると嬉しいです。<br>
 　※最大1000戦まで記録できます。
 
   <center>
   <form name="battle">
-    バトル開始前レート：<input type='number' class="battle_before_rate" id="before_rate" maxlength="4" onChange="battle_before_rate()"/> 
+    バトル開始前レート：<input type='number' name="before_rate" class="battle_before_rate" id="before_rate" maxlength="4" onChange="battle_before_rate()"/> 
     <br>
-    <table border="1" bordercolor="#000" class="table table-sm battle_table">
+    <table class="table table-sm battle_table" border="1" bordercolor="#000">
     <thead>
         <tr>
           <th scope="col">バトル数</th>
@@ -48,7 +55,7 @@
     </thead>
     <tbody>
 <?php
-for($i = 0;$i <= 999;$i++){
+for($i = 0;$i <= 199;$i++){
   echo "<tr><td>";
   echo $i + 1 . "戦目 </td>";
   echo '
@@ -76,7 +83,7 @@ for($i = 0;$i <= 999;$i++){
       </td>
 
       <td>
-      <input type="number" class="battle_rate" id="rate" maxlength="4" onKeyUp="battle_rate()" >  
+      <input type="number" name="rate" class="battle_rate" id="rate" maxlength="4" onKeyUp="battle_rate()" >  
       </td>
 
       <td>
@@ -110,11 +117,11 @@ for($i = 0;$i <= 999;$i++){
       </td>
 
       <td>
-      <input type="text" class="course_name">
+      <input type="text" name="course_name" class="course_name">
       </td>
 
       <td>
-      <input type="text" class="course_id">
+      <input type="text" name="course_id" class="course_id">
       </td>';
   echo "</tr>";
 }
@@ -124,7 +131,7 @@ echo "</tbody></table>";
     
     <div class="result row">
       <div class="col-md-3 col-lg-3 col-sm-3">
-        <table border="2" bordercolor="#000" class="table table-sm battle_table">
+        <table border="2" bordercolor="#000" class="table table-sm">
           <tbody>
             <tr>
               <th>バトル開始前レート</th>
@@ -142,7 +149,7 @@ echo "</tbody></table>";
         </table>
       </div>
       <div class="col-md-5 col-lg-5 col-sm-5">
-        <table border="2" bordercolor="#000" class="table table-sm battle_table">
+        <table border="2" bordercolor="#000" class="table table-sm">
           <thead>
             <tr>
               <th></th>
@@ -208,6 +215,9 @@ echo "</tbody></table>";
         </table>
       </div>
       </div>
+      <!-- <div class="cookie_save">
+        <input type="submit" class="btn btn-primary" value="戦績保存"> 
+      </div> -->
   </form>
 </body>
 </html>

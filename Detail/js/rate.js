@@ -7,12 +7,11 @@ function battle_before_rate(){
 
 function battle_rate(){
 
-    for(var i = 0; i <= 999; i++){
+    for(var i = 0; i <= 199; i++){
 
         //　入力した最新バトル後のレートを取得
         j = i * 7 + 3;
         input_rate = document.battle.elements[j].value;
-        console.log(input_rate);
 
         // 数値が0以上のものだけ取得
         if(input_rate > 0){
