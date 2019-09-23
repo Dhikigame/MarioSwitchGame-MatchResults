@@ -13,12 +13,13 @@
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
-  <script src="js/BattleAdd.js"></script>
+  <script src="js/BattleAddCookie.js"></script>
+  <script src="js/LoadCookie.js"></script>
   
 <body>
   <center><h2 class="heading">マリオメーカー2　みんなでバトル　戦績表　〜簡易版〜</h2></center>
 <center>
-  <form id="battle">
+  <form name="battle" id="battle">
     バトル開始前レート：<input type='number' name="before_rate" class="battle_before_rate" id="before_rate" maxlength="4" /> 
     <br>
     <div class="col-md-5">
@@ -52,15 +53,15 @@
             <tbody>
               <tr>
                 <th>バトル開始前レート</th>
-                <td><div style="font-size:large;" class="start_rate" id="start_rate" maxlength="4" value="0"></div></td>
+                <td><div style="font-size:large;" name="start_rate" class="start_rate" id="start_rate" maxlength="4" value="0"></div></td>
               </tr>
               <tr>
                 <th style="font-size:x-large;">レート差</th>
-                <td><div style="font-size:x-large;" class="diff_rate" id="diff_rate" maxlength="4"></div></td>     
+                <td><div style="font-size:x-large;" name="diff_rate" class="diff_rate" id="diff_rate" maxlength="4"></div></td>     
               </tr>
               <tr>
                 <th style="font-size:x-large;">現在レート</th>
-                <td><div style="font-size:x-large; font-weight: bold;" class="current_rate" id="current_rate" maxlength="4" value="0"></div></td>
+                <td><div style="font-size:x-large; font-weight: bold;" name="current_rate" class="current_rate" id="current_rate" maxlength="4" value="0"></div></td>
               </tr>
             </tbody>
           </table>
