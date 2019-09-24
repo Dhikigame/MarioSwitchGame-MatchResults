@@ -15,30 +15,19 @@ function LoadAction(){
 	FormName = eval('document.'+FormNameTemp+';');
 	//クッキーをフォームへ
 	for (i in SaveCookieList){
-        console.log("Load 1." + SaveCookieList[i]);
+        // console.log("Load 1. " + i + SaveCookieList[i]);
         if(SaveCookieList[i] == "before_rate" || SaveCookieList[i] == "num" || SaveCookieList[i] == "rate"
         || SaveCookieList[i] == "battle_total" || SaveCookieList[i] == "win_total" || SaveCookieList[i] == "win_total_per"){
             eval('FormName.'+SaveCookieList[i]+'.value = getCookie("'+SaveCookieList[i]+'");');
         }else{
-            eval('document.getElementById("'+SaveCookieList[i]+'").innerHTML = getCookie("'+SaveCookieList[i]+'");');
+            eval('document.getElementById("'+SaveCookieList[i]+'").innerHTML = getCookie("'+SaveCookieList[i]+'", ' + i + ');');
         }
-        console.log("Load 2." + SaveCookieList[i]);
+        // console.log("Load 2. " + i + SaveCookieList[i]);
 	}
 }
 
-// //フォーム送信時の処理
-// function SaveAndSubmit(){
-// 	//フォームをクッキーへ
-// 	for (i in SaveCookieList){
-//         eval('setCookie("'+SaveCookieList[i]+'",FormName.'+SaveCookieList[i]+'.value);');
-//         console.log("Save 2." + SaveCookieList[i]);
-// 	}
-// 	//フォーム送信
-// 	FormName.submit();
-// }
-
 //クッキー取得処理
-function getCookie(cName) {
+function getCookie(cName , diff_rate_number=null) {
 	var Cookies = document.cookie.replace(/ /g,'');
 	var Cookie = Cookies.split(';');
 	var Ret_C = '';
@@ -52,17 +41,11 @@ function getCookie(cName) {
 			break;
 		}
 	}
+	// レート差のvalueだったら、スタイル変更関数を呼び出す
+	if(diff_rate_number == 4){
+		DifferentRate(Ret_C);
+	}
 	return Ret_C;
 }
-// //クッキー登録処理
-// function setCookie(pName,pValue) {
-// 	if(pValue != null){
-// 		var setDay = new Date();
-// 		setDay.setTime(setDay.getTime() + (ReserveDay * 86400000));
-// 		expDay = setDay.toGMTString().replace(/UTC/,'GMT');
-// 		document.cookie = escape(pName) + '=' + escape(pValue) + ';expires='+expDay;
-// 		return true;
-// 	}
-// 	return false;
-// }
+
 setTimeout('LoadAction();',100);
