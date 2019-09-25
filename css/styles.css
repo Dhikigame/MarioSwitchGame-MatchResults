@@ -5,7 +5,12 @@
 
 table{
     font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','GenJyuuGothic',sans-serif;
+    /* table-layout: fixed; */
 }
+
+/* th{
+    width: 200px;
+} */
 
 table thead tr{
     background-color: #FFC107;
@@ -27,6 +32,10 @@ select{
 
 .battle_table{
     padding-bottom: 200px;
+}
+
+.heading{
+    padding-top: 80px;
 }
 
 .battle_before_rate {
@@ -53,5 +62,16 @@ select{
     width: 100%;
     height: 200px;
     bottom: 0px;
+    text-align: center;
+}
+
+.cookie_save{
+    padding: 10px;
+    background: rgb(252, 159, 108);
+    display: flex !important;
+    position: fixed !important;
+    width: 100%;
+    height: 70px;
+    top: 0px;
     text-align: center;
 }
