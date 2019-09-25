@@ -55,10 +55,12 @@ function BattleRate(){
     // 数値が0以上のバトル開始前レート取得
     if(document.getElementById("before_rate").value != "" && document.getElementById("before_rate").value >= 0){
         var start_rate = document.getElementById("before_rate").value;
+        start_rate = Math.floor(start_rate);
     }
 
     // 数値が0以上の最新バトル後レート取得
     var input_rate = document.getElementById("rate").value;
+    input_rate = Math.floor(input_rate);
 
     // 数値が0以上のものだけ取得
     if( (input_rate >= 0 && start_rate >= 0) && (input_rate != "" && start_rate != "") ){
@@ -81,6 +83,7 @@ function BattleRate(){
 }
 
 function rank_rate(rate){
+    console.log(rate);
     
     if(rate >= 5000){
         return rate + " S+";

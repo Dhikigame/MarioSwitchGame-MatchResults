@@ -15,15 +15,12 @@ function SaveAndSubmit(){
     FormName = eval('document.'+FormNameTemp+';');
 	//フォームをクッキーへ
 	for (i in SaveCookieList){
-
-        // console.log("Save 1. " + i + SaveCookieList[i]);
         if(SaveCookieList[i] == "before_rate" || SaveCookieList[i] == "num" || SaveCookieList[i] == "rate"
         || SaveCookieList[i] == "battle_total" || SaveCookieList[i] == "win_total" || SaveCookieList[i] == "win_total_per"){
             eval('setCookie("'+SaveCookieList[i]+'",FormName.'+SaveCookieList[i]+'.value);');
         }else{
             eval('setCookie("'+SaveCookieList[i]+'",document.getElementById("'+SaveCookieList[i]+'").innerHTML);');
         }
-        // console.log("Save 2. " + i + SaveCookieList[i]);
 	}
 	//フォーム送信
 	FormName.submit();
