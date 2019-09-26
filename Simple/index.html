@@ -50,8 +50,10 @@
     <input type="button" value="次の試合へ" onclick="BattleAdd()"> <input type="button" value="リセット" onclick="ResetAction()">
     </div>
     
-    <div class="result row">
-        <div class="col-md-2 col-lg-2 col-sm-2">
+    <div class="result row center-block">
+        <div class="col-md-3 col-lg-3 col-sm-1">
+        </div>
+        <div class="col-md-3 col-lg-3 col-sm-5">
           <table border="2" bordercolor="#000" class="table table-sm">
             <tbody>
               <tr>
@@ -59,17 +61,17 @@
                 <td><div style="font-size:large;" name="start_rate" class="start_rate" id="start_rate" maxlength="4" value="0"></div></td>
               </tr>
               <tr>
-                <th style="font-size:x-large;">レート差</th>
-                <td><div style="font-size:x-large;" name="diff_rate" class="diff_rate" id="diff_rate" maxlength="4"></div></td>     
+                <th style="font-size:large;">レート差</th>
+                <td><div style="font-size:large;" name="diff_rate" class="diff_rate" id="diff_rate" maxlength="4"></div></td>     
               </tr>
               <tr>
-                <th style="font-size:x-large;">現在レート</th>
-                <td><div style="font-size:x-large; font-weight: bold;" name="current_rate" class="current_rate" id="current_rate" maxlength="4" value="0"></div></td>
+                <th style="font-size:large;">現在レート</th>
+                <td><div style="font-size:large; font-weight: bold;" name="current_rate" class="current_rate" id="current_rate" maxlength="4" value="0"></div></td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="col-md-3 col-lg-3 col-sm-3">
+        <div class="col-md-3 col-lg-3 col-sm-5">
           <table border="2" bordercolor="#000" class="table table-sm">
             <tbody>
               <tr>
@@ -86,6 +88,8 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div class="col-md-3 col-lg-3 col-sm-1">
         </div>
         </div>
   </form>
