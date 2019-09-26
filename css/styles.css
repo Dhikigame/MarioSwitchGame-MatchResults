@@ -6,6 +6,7 @@
 table{
     font-family: 'ヒラギノ丸ゴ ProN','Hiragino Maru Gothic ProN','GenJyuuGothic',sans-serif;
     /* table-layout: fixed; */
+    text-align: center;
 }
 
 /* th{
