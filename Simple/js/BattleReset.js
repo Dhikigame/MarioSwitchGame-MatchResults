@@ -10,4 +10,7 @@ function ResetAction(){
     document.getElementById("start_rate").innerHTML = "";
     document.getElementById("diff_rate").innerHTML = "";
     document.getElementById("current_rate").innerHTML = "";
+
+    // クッキーに入力項目保存
+    SaveAndSubmit();
 }

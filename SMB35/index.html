@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>スーパーマリオブラザーズ35 戦績表</title>
+  <link rel="stylesheet" href="../css/styles.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <script src="js/BattleAdd.js"></script>
+  <script src="js/BattleReset.js"></script>
+
+  <script src="js/LoadCookie.js"></script>
+  <script src="js/SaveCookie.js"></script>
+  
+<body>
+  <center><h2 class="heading">スーパーマリオブラザーズ35 戦績表</h2></center>
+<center>
+  スーパーマリオブラザーズ35の戦績表になります。<br>
+  配信等で利用してくださると嬉しいです。<br>
+  <a href="https://www.nintendo.co.jp/switch/ayama/index.html" target="_blank">公式サイト</a>
+  　<div style="font-size:middle; color: red;">※Cookieを使用しており保存した戦績は90日間保存されます。90日以内の間に再度更新しないと自動的に戦績は消去されます。</div>
+    <div>※バグとして「10戦前順位」が3位以内のとき、色が変化しない問題があり</div>
+  <form name="battle" id="battle">
+    <div class="col-md-5">
+    <table class="table table-sm battle_table" border="2" bordercolor="#000">
+      <thead>
+          <tr>
+            <th>バトル数</th>
+            <th>バトル結果</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <input type="number" name="num" class="battle_num" id="num" size="2" maxlength="4"　value="1" readonly>  
+          </td>
+          <td>
+            <select name="rank" id="rank" class="guest_iptxt">
+              <option class="guest_ef" value="" placeholder="順位"><span class="guest_name">↓順位</span></option>
+              <option class='guest_ef' value='35'>35</option>
+              <option class='guest_ef' value='34'>34</option>
+              <option class='guest_ef' value='33'>33</option>
+              <option class='guest_ef' value='32'>32</option>
+              <option class='guest_ef' value='31'>31</option>
+              <option class='guest_ef' value='30'>30</option>
+              <option class='guest_ef' value='29'>29</option>
+              <option class='guest_ef' value='28'>28</option>
+              <option class='guest_ef' value='27'>27</option>
+              <option class='guest_ef' value='26'>26</option>
+              <option class='guest_ef' value='25'>25</option>
+              <option class='guest_ef' value='24'>24</option>
+              <option class='guest_ef' value='23'>23</option>
+              <option class='guest_ef' value='22'>22</option>
+              <option class='guest_ef' value='21'>21</option>
+              <option class='guest_ef' value='20'>20</option>
+              <option class='guest_ef' value='19'>19</option>
+              <option class='guest_ef' value='18'>18</option>
+              <option class='guest_ef' value='17'>17</option>
+              <option class='guest_ef' value='16'>16</option>
+              <option class='guest_ef' value='15'>15</option>
+              <option class='guest_ef' value='14'>14</option>
+              <option class='guest_ef' value='13'>13</option>
+              <option class='guest_ef' value='12'>12</option>
+              <option class='guest_ef' value='11'>11</option>
+              <option class='guest_ef' value='10'>10</option>
+              <option class='guest_ef' value='9'>9</option>
+              <option class='guest_ef' value='8'>8</option>
+              <option class='guest_ef' value='7'>7</option>
+              <option class='guest_ef' value='6'>6</option>
+              <option class='guest_ef' value='5'>5</option>
+              <option class='guest_ef' value='4'>4</option>
+              <option class='guest_ef' value='3'>3</option>
+              <option class='guest_ef' value='2'>2</option>
+              <option class='guest_ef' value='1'>1</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="button" value="次の試合へ" onclick="BattleAdd()"> <input type="button" value="リセット" onclick="ResetAction()">
+    </div>
+    
+    <div class="smb35-result row center-block">
+        <div class="col-md-3 col-lg-3 col-sm-1">
+        </div>
+        <div class="col-md-3 col-lg-3 col-sm-5">
+          <table border="2" bordercolor="#000" class="table table-sm">
+            <tbody>
+              <tr>
+                <td>バトル数</td>
+                <td><input style="font-size:large;" type="text" name="total_num" id="total_num" size="4" value="0" readonly></td>
+              </tr>
+              <tr>
+                <td style="font-size:large;">1位回数</td>
+                <td><input style="font-size:large; font-weight: bold;" type="text" name="win_num" id="win_num" size="4" value="0" readonly></td>
+              </tr>
+              <tr>
+                <td style="font-size:large;">1位勝率(%)</td>
+                <td><input style="font-size:x-large; font-weight: bold;" type="text" name="win_per" id="win_per" size="5" value="0" readonly></td>
+              </tr>
+              <tr>
+                <td style="font-size:large;">過去10戦平均順位</td>
+                <td><input style="font-size:x-large; font-weight: bold;" type="text" name="rank_avg" id="rank_avg" size="5" value="0" readonly></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- <div class="col-md-3 col-lg-3 col-sm-1">
+        </div> -->
+        <div class="col-md-3 col-lg-3 col-sm-5">
+          <table border="2" bordercolor="#000" class="table table-sm">
+            <tbody>
+              <tr>
+                <td>
+                  1戦前順位<div style="font-size:large; font-weight: bold;" name="one_rank_before" class="one_rank_before" id="one_rank_before" maxlength="4" value="0"></div>
+                </td>
+                <td>
+                  6戦前順位<div style="font-size:large; font-weight: bold;" name="six_rank_before" class="six_rank_before" id="six_rank_before" maxlength="4" value="0"></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  2戦前順位<div style="font-size:large; font-weight: bold;" name="two_rank_before" class="two_rank_before" id="two_rank_before" maxlength="4" value="0"></div>
+                </td>
+                <td>
+                  7戦前順位<div style="font-size:large; font-weight: bold;" name="seven_rank_before" class="seven_rank_before" id="seven_rank_before" maxlength="4" value="0"></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  3戦前順位<div style="font-size:large; font-weight: bold;" name="three_rank_before" class="three_rank_before" id="three_rank_before" maxlength="4" value="0"></div>
+                </td>
+                <td>
+                  8戦前順位<div style="font-size:large; font-weight: bold;" name="eight_rank_before" class="eight_rank_before" id="eight_rank_before" maxlength="4" value="0"></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  4戦前順位<div style="font-size:large; font-weight: bold;" name="four_rank_before" class="four_rank_before" id="four_rank_before" maxlength="4" value="0"></div>
+                </td>
+                <td>
+                  9戦前順位<div style="font-size:large; font-weight: bold;" name="nine_rank_before" class="nine_rank_before" id="nine_rank_before" maxlength="4" value="0"></div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  5戦前順位<div style="font-size:large; font-weight: bold;" name="five_rank_before" class="five_rank_before" id="five_rank_before" maxlength="4" value="0"></div>
+                </td>
+                <td>
+                  10戦前順位<div style="font-size:large; font-weight: bold;" name="ten_rank_before" class="ten_rank_before" id="ten_rank_before" maxlength="4" value="0"></div>
+                </td>
+                <div style="font-size:large; font-weight: bold;" name="eleven_rank_before" class="eleven_rank_before" id="eleven_rank_before" maxlength="4" value="0"></div>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        </div>
+  </form>
+</center>
+</body>
+</html>
+
