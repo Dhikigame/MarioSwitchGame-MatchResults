@@ -66,6 +66,7 @@ select{
     text-align: center;
 }
 
+<<<<<<< HEAD
 .smb35-result{
     padding: 10px;
     background: rgb(255, 224, 85);
@@ -77,6 +78,8 @@ select{
     text-align: center;
 }
 
+=======
+>>>>>>> heroku/master
 .cookie_save{
     padding: 10px;
     background: rgb(252, 159, 108);
