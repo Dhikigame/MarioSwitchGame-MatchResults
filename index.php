@@ -15,7 +15,7 @@
   
 <body>
   <a href=./Simple>みんなでバトル　簡易版</a><br>
-  <a href=./Detail>みんなでバトル　詳細版</a>
+  <a href=./Detail>みんなでバトル　詳細版</a><br>
   <a href=./SMB35>スーパーマリオブラザーズ35　戦績表</a>
 </body>
 </html>
