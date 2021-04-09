@@ -14,7 +14,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   
 <body>
-   <a href=./Simple>みんなでバトル　簡易版</a><br>
-   <a href=./Detail>みんなでバトル　詳細版</a>
+  <a href=./Simple>みんなでバトル　簡易版</a><br>
+  <a href=./Detail>みんなでバトル　詳細版</a>
+  <a href=./SMB35>スーパーマリオブラザーズ35　戦績表</a>
 </body>
 </html>
